@@ -26,7 +26,7 @@ import { toast } from "@/components/ui/use-toast"
 import { Icons } from "@/components/icons"
 
 async function deleteWatchlist(watchlistId: string) {
-  const response = await fetch(`/api/watchlists/${watchlistId}`, {
+  const response = await fetch(`/api/watchlist/${watchlistId}`, {
     method: "DELETE",
   })
 
