@@ -19,7 +19,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              Nick Pasqualetti
+              Nick Pasqualetti{" "}
             </a>
             <a
               href="/terms"
@@ -27,7 +27,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              Terms
+              Terms{" "}
             </a>
             <a
               href="/privacy"
@@ -35,7 +35,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              Privacy
+              Privacy{" "}
             </a>
           </p>
         </div>
