@@ -37,7 +37,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     const signInResult = await signIn("email", {
       email: data.email.toLowerCase(),
       redirect: false,
-      callbackUrl: process.env.NEXTAUTH_URL || "/dashboard",
+      callbackUrl: searchParams?.get("from") || "/dashboard",
     })
 
     setIsLoading(false)
