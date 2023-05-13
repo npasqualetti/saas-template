@@ -42,9 +42,7 @@ export default async function DashboardPage() {
       <div>
         {watchlist?.length ? (
           <div className="divide-y divide-border rounded-md border">
-            {watchlist.map((post) => (
-              <PostItem key={post.id} post={post} />
-            ))}
+            holding
           </div>
         ) : (
           <EmptyPlaceholder>
