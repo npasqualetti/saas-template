@@ -5,8 +5,8 @@ import { db } from "@/lib/db"
 import { getCurrentUser } from "@/lib/session"
 import { EmptyPlaceholder } from "@/components/empty-placeholder"
 import { DashboardHeader } from "@/components/header"
-import { PostCreateButton } from "@/components/watchlist-create-button"
-import { PostItem } from "@/components/watchlist-item"
+import { WatchlistCreateButton } from "@/components/watchlist-create-button"
+import { WatchlistItem } from "@/components/watchlist-item"
 import { DashboardShell } from "@/components/shell"
 
 export const metadata = {
@@ -37,7 +37,7 @@ export default async function DashboardPage() {
   return (
     <DashboardShell>
       <DashboardHeader heading="Watchlist" text="Create and manage your watchlist.">
-        <PostCreateButton />
+        <WatchlistCreateButton />
       </DashboardHeader>
       <div>
         {watchlist?.length ? (
@@ -51,7 +51,7 @@ export default async function DashboardPage() {
             <EmptyPlaceholder.Description>
               You don&apos;t have any watchlist yet. Start creating content.
             </EmptyPlaceholder.Description>
-            <PostCreateButton variant="outline" />
+            <WatchlistCreateButton variant="outline" />
           </EmptyPlaceholder>
         )}
       </div>
