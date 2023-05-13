@@ -3,11 +3,11 @@ import * as z from "zod"
 
 import { authOptions } from "@/lib/auth"
 import { db } from "@/lib/db"
-import { postPatchSchema } from "@/lib/validations/post"
+import { watchlistPatchSchema } from "@/lib/validations/watchlist"
 
 const routeContextSchema = z.object({
   params: z.object({
-    postId: z.string(),
+    watchlistId: z.string(),
   }),
 })
 
@@ -20,14 +20,14 @@ export async function DELETE(
     const { params } = routeContextSchema.parse(context)
 
     // Check if the user has access to this post.
-    if (!(await verifyCurrentUserHasAccessToPost(params.postId))) {
+    if (!(await verifyCurrentUserHasAccessToPost(params.watchlistId))) {
       return new Response(null, { status: 403 })
     }
 
     // Delete the post.
-    await db.post.delete({
+    await db.watchlist.delete({
       where: {
-        id: params.postId as string,
+        id: params.watchlistId as string,
       },
     })
 
@@ -50,23 +50,22 @@ export async function PATCH(
     const { params } = routeContextSchema.parse(context)
 
     // Check if the user has access to this post.
-    if (!(await verifyCurrentUserHasAccessToPost(params.postId))) {
+    if (!(await verifyCurrentUserHasAccessToPost(params.watchlistId))) {
       return new Response(null, { status: 403 })
     }
 
     // Get the request body and validate it.
     const json = await req.json()
-    const body = postPatchSchema.parse(json)
+    const body = watchlistPatchSchema.parse(json)
 
     // Update the post.
     // TODO: Implement sanitization for content.
-    await db.post.update({
+    await db.watchlist.update({
       where: {
-        id: params.postId,
+        id: params.watchlistId,
       },
       data: {
-        title: body.title,
-        content: body.content,
+        symbol: body.symbol,
       },
     })
 
@@ -80,11 +79,11 @@ export async function PATCH(
   }
 }
 
-async function verifyCurrentUserHasAccessToPost(postId: string) {
+async function verifyCurrentUserHasAccessToPost(watchlistId: string) {
   const session = await getServerSession(authOptions)
-  const count = await db.post.count({
+  const count = await db.watchlist.count({
     where: {
-      id: postId,
+      id: watchlistId,
       authorId: session?.user.id,
     },
   })

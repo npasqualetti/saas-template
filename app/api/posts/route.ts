@@ -6,9 +6,8 @@ import { db } from "@/lib/db"
 import { RequiresProPlanError } from "@/lib/exceptions"
 import { getUserSubscriptionPlan } from "@/lib/subscription"
 
-const postCreateSchema = z.object({
-  title: z.string(),
-  content: z.string().optional(),
+const watchlistCreateSchema = z.object({
+  symbol: z.string(),
 })
 
 export async function GET() {
@@ -20,11 +19,10 @@ export async function GET() {
     }
 
     const { user } = session
-    const posts = await db.post.findMany({
+    const watchlistItems = await db.watchlist.findMany({
       select: {
         id: true,
-        title: true,
-        published: true,
+        symbol: true,
         createdAt: true,
       },
       where: {
@@ -32,7 +30,7 @@ export async function GET() {
       },
     })
 
-    return new Response(JSON.stringify(posts))
+    return new Response(JSON.stringify(watchlistItems))
   } catch (error) {
     return new Response(null, { status: 500 })
   }
@@ -50,9 +48,9 @@ export async function POST(req: Request) {
     const subscriptionPlan = await getUserSubscriptionPlan(user.id)
 
     // If user is on a free plan.
-    // Check if user has reached limit of 3 posts.
+    // Check if user has reached limit of 3 watchlistItems.
     if (!subscriptionPlan?.isPro) {
-      const count = await db.post.count({
+      const count = await db.watchlist.count({
         where: {
           authorId: user.id,
         },
@@ -64,12 +62,11 @@ export async function POST(req: Request) {
     }
 
     const json = await req.json()
-    const body = postCreateSchema.parse(json)
+    const body = watchlistCreateSchema.parse(json)
 
-    const post = await db.post.create({
+    const post = await db.watchlist.create({
       data: {
-        title: body.title,
-        content: body.content,
+        symbol: body.symbol,
         authorId: session.user.id,
       },
       select: {

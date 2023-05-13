@@ -12,7 +12,7 @@ import * as z from "zod"
 
 import "@/styles/editor.css"
 import { cn } from "@/lib/utils"
-import { postPatchSchema } from "@/lib/validations/post"
+import { postPatchSchema } from "@/lib/validations/watchlist"
 import { buttonVariants } from "@/components/ui/button"
 import { toast } from "@/components/ui/use-toast"
 import { Icons } from "@/components/icons"
