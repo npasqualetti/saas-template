@@ -9,7 +9,7 @@ interface WatchlistItemProps {
   watchlist: Pick<Watchlist, "id" | "symbol" | "createdAt">
 }
 
-export default function WatchlistItem({ watchlist }: WatchlistItemProps) {
+export function WatchlistItem({ watchlist }: WatchlistItemProps) {
   return (
     <div className="flex items-center justify-between p-4">
       <div className="grid gap-1">
@@ -40,3 +40,5 @@ WatchlistItem.Skeleton = function WatchlistItemSkeleton() {
     </div>
   )
 }
+
+export default WatchlistItem;
