@@ -76,7 +76,7 @@ export function WatchlistOperations({ watchlist }: WatchlistOperationsProps) {
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>
-              Are you sure you want to delete this watchlist?
+              Are you sure you want to delete {watchlist.id} from this watchlist?
             </AlertDialogTitle>
             <AlertDialogDescription>
               This action cannot be undone.
