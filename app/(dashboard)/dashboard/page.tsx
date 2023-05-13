@@ -20,7 +20,7 @@ export default async function DashboardPage() {
     redirect(authOptions?.pages?.signIn || "/login")
   }
 
-  const posts = await db.post.findMany({
+  const watchlist = await db.watchlist.findMany({
     where: {
       authorId: user.id,
     },
@@ -37,22 +37,22 @@ export default async function DashboardPage() {
 
   return (
     <DashboardShell>
-      <DashboardHeader heading="Posts" text="Create and manage posts.">
+      <DashboardHeader heading="Watchlist" text="Create and manage your watchlist.">
         <PostCreateButton />
       </DashboardHeader>
       <div>
-        {posts?.length ? (
+        {watchlist?.length ? (
           <div className="divide-y divide-border rounded-md border">
-            {posts.map((post) => (
+            {watchlist.map((post) => (
               <PostItem key={post.id} post={post} />
             ))}
           </div>
         ) : (
           <EmptyPlaceholder>
             <EmptyPlaceholder.Icon name="post" />
-            <EmptyPlaceholder.Title>No posts created</EmptyPlaceholder.Title>
+            <EmptyPlaceholder.Title>No watchlist created</EmptyPlaceholder.Title>
             <EmptyPlaceholder.Description>
-              You don&apos;t have any posts yet. Start creating content.
+              You don&apos;t have any watchlist yet. Start creating content.
             </EmptyPlaceholder.Description>
             <PostCreateButton variant="outline" />
           </EmptyPlaceholder>

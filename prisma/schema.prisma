@@ -53,7 +53,7 @@ model User {
 
   accounts Account[]
   sessions Session[]
-  Post     Post[]
+  Watchlist Watchlist[]
 
   stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
   stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
@@ -72,16 +72,14 @@ model VerificationToken {
   @@map(name: "verification_tokens")
 }
 
-model Post {
+model Watchlist {
   id        String   @id @default(cuid())
-  title     String
-  content   Json?
-  published Boolean  @default(false)
+  symbol    String
   createdAt DateTime @default(now()) @map(name: "created_at")
   updatedAt DateTime @default(now()) @map(name: "updated_at")
   authorId  String
 
   author User @relation(fields: [authorId], references: [id])
 
-  @@map(name: "posts")
+  @@map(name: "watchlist")
 }
