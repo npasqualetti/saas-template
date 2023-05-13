@@ -1,31 +1,31 @@
 import Link from "next/link"
-import { Post } from "@prisma/client"
+import { Watchlist } from "@prisma/client"
 
 import { formatDate } from "@/lib/utils"
 import { Skeleton } from "@/components/ui/skeleton"
-import { PostOperations } from "@/components/post-operations"
+import { WatchlistOperations } from "@/components/watchlist-operations"
 
-interface PostItemProps {
-  post: Pick<Post, "id" | "title" | "published" | "createdAt">
+interface WatchlistItemProps {
+  watchlist: Pick<Watchlist, "id" | "symbol" | "createdAt">
 }
 
-export function PostItem({ post }: PostItemProps) {
+export function PostItem({ watchlist }: WatchlistItemProps) {
   return (
     <div className="flex items-center justify-between p-4">
       <div className="grid gap-1">
         <Link
-          href={`/editor/${post.id}`}
+          href={`/editor/${watchlist.id}`}
           className="font-semibold hover:underline"
         >
-          {post.title}
+          {watchlist.symbol}
         </Link>
         <div>
           <p className="text-sm text-muted-foreground">
-            {formatDate(post.createdAt?.toDateString())}
+            {formatDate(watchlist.createdAt?.toDateString())}
           </p>
         </div>
       </div>
-      <PostOperations post={{ id: post.id, title: post.title }} />
+      <WatchlistOperations watchlist={{ id: watchlist.id, symbol: watchlist.symbol }} />
     </div>
   )
 }

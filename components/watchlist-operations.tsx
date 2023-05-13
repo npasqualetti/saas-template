@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { Post } from "@prisma/client"
+import { Watchlist } from "@prisma/client"
 
 import {
   AlertDialog,
@@ -25,15 +25,15 @@ import {
 import { toast } from "@/components/ui/use-toast"
 import { Icons } from "@/components/icons"
 
-async function deletePost(postId: string) {
-  const response = await fetch(`/api/posts/${postId}`, {
+async function deleteWatchlist(watchlistId: string) {
+  const response = await fetch(`/api/watchlists/${watchlistId}`, {
     method: "DELETE",
   })
 
   if (!response?.ok) {
     toast({
       title: "Something went wrong.",
-      description: "Your post was not deleted. Please try again.",
+      description: "Your watchlist was not deleted. Please try again.",
       variant: "destructive",
     })
   }
@@ -41,11 +41,11 @@ async function deletePost(postId: string) {
   return true
 }
 
-interface PostOperationsProps {
-  post: Pick<Post, "id" | "title">
+interface WatchlistOperationsProps {
+  watchlist: Pick<Watchlist, "id" | "symbol">
 }
 
-export function PostOperations({ post }: PostOperationsProps) {
+export function WatchlistOperations({ watchlist }: WatchlistOperationsProps) {
   const router = useRouter()
   const [showDeleteAlert, setShowDeleteAlert] = React.useState<boolean>(false)
   const [isDeleteLoading, setIsDeleteLoading] = React.useState<boolean>(false)
@@ -59,7 +59,7 @@ export function PostOperations({ post }: PostOperationsProps) {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem>
-            <Link href={`/editor/${post.id}`} className="flex w-full">
+            <Link href={`/editor/${watchlist.id}`} className="flex w-full">
               Edit
             </Link>
           </DropdownMenuItem>
@@ -76,7 +76,7 @@ export function PostOperations({ post }: PostOperationsProps) {
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>
-              Are you sure you want to delete this post?
+              Are you sure you want to delete this watchlist?
             </AlertDialogTitle>
             <AlertDialogDescription>
               This action cannot be undone.
@@ -89,7 +89,7 @@ export function PostOperations({ post }: PostOperationsProps) {
                 event.preventDefault()
                 setIsDeleteLoading(true)
 
-                const deleted = await deletePost(post.id)
+                const deleted = await deleteWatchlist(watchlist.id)
 
                 if (deleted) {
                   setIsDeleteLoading(false)

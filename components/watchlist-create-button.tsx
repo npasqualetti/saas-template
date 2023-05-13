@@ -8,26 +8,26 @@ import { ButtonProps, buttonVariants } from "@/components/ui/button"
 import { toast } from "@/components/ui/use-toast"
 import { Icons } from "@/components/icons"
 
-interface PostCreateButtonProps extends ButtonProps {}
+interface WatchlistCreateButtonProps extends ButtonProps {}
 
-export function PostCreateButton({
+export function WatchlistCreateButton({
   className,
   variant,
   ...props
-}: PostCreateButtonProps) {
+}: WatchlistCreateButtonProps) {
   const router = useRouter()
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
 
   async function onClick() {
     setIsLoading(true)
 
-    const response = await fetch("/api/posts", {
+    const response = await fetch("/api/watchlist", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        title: "Untitled Post",
+        symbol: "AAPL",
       }),
     })
 

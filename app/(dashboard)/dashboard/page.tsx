@@ -5,8 +5,8 @@ import { db } from "@/lib/db"
 import { getCurrentUser } from "@/lib/session"
 import { EmptyPlaceholder } from "@/components/empty-placeholder"
 import { DashboardHeader } from "@/components/header"
-import { PostCreateButton } from "@/components/post-create-button"
-import { PostItem } from "@/components/post-item"
+import { PostCreateButton } from "@/components/watchlist-create-button"
+import { PostItem } from "@/components/watchlist-item"
 import { DashboardShell } from "@/components/shell"
 
 export const metadata = {
