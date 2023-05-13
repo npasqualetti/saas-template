@@ -1,6 +1,6 @@
 import { DashboardHeader } from "@/components/header"
 import { WatchlistCreateButton } from "@/components/watchlist-create-button"
-import { WatchlistItem } from "@/components/watchlist-item"
+import WatchlistItem from "@/components/watchlist-item"
 import { DashboardShell } from "@/components/shell"
 
 export default function DashboardLoading() {
