@@ -56,7 +56,7 @@ export default async function DashboardPage() {
               No watchlist created
             </EmptyPlaceholder.Title>
             <EmptyPlaceholder.Description>
-              You don&apos;t have any watchlist yet. Start creating content.
+              You don&apos;t have any items in your watchlist yet. Start by adding tickers.
             </EmptyPlaceholder.Description>
             <WatchlistCreateButton variant="outline" />
           </EmptyPlaceholder>
