@@ -53,8 +53,6 @@ export function WatchlistCreateButton({
 
     // This forces a cache invalidation.
     router.refresh()
-
-    router.push(`/editor/${post.id}`)
   }
 
   return (
