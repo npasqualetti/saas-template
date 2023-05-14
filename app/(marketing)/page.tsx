@@ -19,7 +19,7 @@ export default async function IndexPage() {
             Follow along on Twitter
           </Link>
           <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            Unleash the power of sentiment AI with CounteractAI!
+            Unleash the power of sentiment AI with SentiMetric!
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
             Maximize your investment potential, make informed decisions, and
