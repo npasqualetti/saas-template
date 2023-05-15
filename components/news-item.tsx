@@ -69,15 +69,15 @@ export function NewsItem({ data }: NewsItemProps) {
 
             <p className="mt-2 text-xs font-medium text-gray-500 sm:mt-0">
               Featuring{" "}
-              <a {}" className="underline hover:text-gray-700">
+              <a className="underline hover:text-gray-700">
                 Barry
               </a>
               ,
-              <a {}" className="underline hover:text-gray-700">
+              <a className="underline hover:text-gray-700">
                 Sandra
               </a>{" "}
               and
-              <a {}" className="underline hover:text-gray-700">
+              <a className="underline hover:text-gray-700">
                 August
               </a>
             </p>
