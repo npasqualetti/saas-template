@@ -19,7 +19,7 @@ interface NewsItemProps {
           source_domain: string,
           topics: {
                   topic: string,
-                  relevance_score: 1.0
+                  relevance_score: number
           }[]
           ,
           overall_sentiment_score: number,
