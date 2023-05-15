@@ -54,11 +54,11 @@ export function NewsItem({ data }: NewsItemProps) {
 
         <div>
           <strong className="rounded border border-indigo-500 bg-indigo-500 px-3 py-1.5 text-[10px] font-medium text-white">
-            {data.feed[0].title}
+            "test"
           </strong>
 
           <h3 className="mt-4 text-lg font-medium sm:text-xl">
-            <a href={data.feed[0].title} className="hover:underline">
+            <a href="test" className="hover:underline">
               {" "}
               Some Interesting Podcast Title{" "}
             </a>
