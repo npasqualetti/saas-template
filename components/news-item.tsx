@@ -1,41 +1,8 @@
 import { formatDate } from "@/lib/utils"
 import { Skeleton } from "@/components/ui/skeleton"
 
-interface NewsItemProps {
-  data: {
-    items: number,
-    sentiment_score_definition: string,
-    relevance_score_definition: string,
-    feed: [
-      {
-          title: string,
-          url: string,
-          time_published: EpochTimeStamp,
-          authors: string[],
-          summary: string,
-          banner_image: string,
-          source: string,
-          category_within_source: string,
-          source_domain: string,
-          topics: {
-                  topic: string,
-                  relevance_score: number
-          }[]
-          ,
-          overall_sentiment_score: number,
-          overall_sentiment_label: string,
-          ticker_sentiment: {
-                  ticker: number,
-                  relevance_score: number ,
-                  ticker_sentiment_score: number,
-                  ticker_sentiment_label: string
-          }[]
-      }
-    ]
-  }
-}
 
-export function NewsItem({ data }: NewsItemProps) {
+export function NewsItem() {
   return (
     <div className="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8">
       <div className="flex items-start sm:gap-8">
