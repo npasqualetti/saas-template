@@ -5,11 +5,11 @@ import { formatDate } from "@/lib/utils"
 import { Skeleton } from "@/components/ui/skeleton"
 import { WatchlistOperations } from "@/components/watchlist-operations"
 
-interface WatchlistItemProps {
-  watchlist: Pick<Watchlist, "id" | "symbol" | "createdAt">
+interface NewsItemProps {
+  news: Pick<Watchlist, "id" | "symbol" | "createdAt">
 }
 
-export function WatchlistItem({ watchlist }: WatchlistItemProps) {
+export function NewsItem() {
   return (
     <div className="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8">
       <div className="flex items-start sm:gap-8">
@@ -90,7 +90,7 @@ export function WatchlistItem({ watchlist }: WatchlistItemProps) {
   )
 }
 
-WatchlistItem.Skeleton = function WatchlistItemSkeleton() {
+NewsItem.Skeleton = function NewsItemSkeleton() {
   return (
     <div className="p-4">
       <div className="space-y-3">
@@ -101,4 +101,4 @@ WatchlistItem.Skeleton = function WatchlistItemSkeleton() {
   )
 }
 
-export default WatchlistItem
+export default NewsItem

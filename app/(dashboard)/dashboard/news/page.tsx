@@ -7,6 +7,7 @@ import { EmptyPlaceholder } from "@/components/empty-placeholder"
 import { DashboardHeader } from "@/components/header"
 import { WatchlistCreateButton } from "@/components/watchlist-create-button"
 import WatchlistItem from "@/components/watchlist-item"
+import { NewsItem } from "@/components/news-item"
 import { DashboardShell } from "@/components/shell"
 
 export const metadata = {
@@ -43,6 +44,10 @@ export default async function DashboardPage() {
         <WatchlistCreateButton />
       </DashboardHeader>
       <div>
+        <div className="divide-y divide-border rounded-md border">
+          <NewsItem />
+        </div>
+
         {watchlist?.length ? (
           <div className="divide-y divide-border rounded-md border">
             {watchlist.map((watchlist) => (
