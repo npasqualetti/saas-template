@@ -8,11 +8,11 @@ export const dashboardConfig: DashboardConfig = {
     },
     {
       title: "Watchlist",
-      href: "/watchlist",
+      href: "/dashboard/watchlist",
     },
     {
       title: "News",
-      href: "/news",
+      href: "/dashboard/news",
     },
   ],
   sidebarNav: [
