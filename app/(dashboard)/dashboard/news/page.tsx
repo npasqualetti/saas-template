@@ -41,10 +41,6 @@ export default async function DashboardPage() {
     <DashboardShell>
       <DashboardHeader heading="News" text="Read the latest news." />
       <div>
-        <div className="divide-y divide-border rounded-md border">
-          <NewsItem />
-        </div>
-
         {data?.length ? (
           <div className="divide-y divide-border rounded-md border">
             {data?.feed.map((data) => (

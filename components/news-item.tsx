@@ -1,7 +1,5 @@
-import Link from "next/link"
 import { formatDate } from "@/lib/utils"
 import { Skeleton } from "@/components/ui/skeleton"
-import { WatchlistOperations } from "@/components/watchlist-operations"
 
 interface NewsItemProps {
   data: {
