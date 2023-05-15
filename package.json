@@ -1,10 +1,10 @@
 {
-  "name": "taxonomy",
+  "name": "SentiMetric",
   "version": "0.2.0",
   "private": true,
   "author": {
     "name": "shadcn",
-    "url": "https://twitter.com/shadcn"
+    "url": "https://twitter.com/sentimetric"
   },
   "scripts": {
     "dev": "concurrently \"contentlayer dev\" \"next dev\"",
