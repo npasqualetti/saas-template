@@ -1,15 +1,13 @@
 import Link from "next/link"
-import { Watchlist } from "@prisma/client"
-
 import { formatDate } from "@/lib/utils"
 import { Skeleton } from "@/components/ui/skeleton"
 import { WatchlistOperations } from "@/components/watchlist-operations"
 
 interface NewsItemProps {
-  news: Pick<Watchlist, "id" | "symbol" | "createdAt">
+  any
 }
 
-export function NewsItem() {
+export function NewsItem({ data }: NewsItemProps) {
   return (
     <div className="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8">
       <div className="flex items-start sm:gap-8">
@@ -28,11 +26,11 @@ export function NewsItem() {
 
         <div>
           <strong className="rounded border border-indigo-500 bg-indigo-500 px-3 py-1.5 text-[10px] font-medium text-white">
-            Episode #101
+            {data.title}
           </strong>
 
           <h3 className="mt-4 text-lg font-medium sm:text-xl">
-            <a href="" className="hover:underline">
+            <a href={data.title} className="hover:underline">
               {" "}
               Some Interesting Podcast Title{" "}
             </a>
@@ -71,15 +69,15 @@ export function NewsItem() {
 
             <p className="mt-2 text-xs font-medium text-gray-500 sm:mt-0">
               Featuring{" "}
-              <a href="#" className="underline hover:text-gray-700">
+              <a {}" className="underline hover:text-gray-700">
                 Barry
               </a>
               ,
-              <a href="#" className="underline hover:text-gray-700">
+              <a {}" className="underline hover:text-gray-700">
                 Sandra
               </a>{" "}
               and
-              <a href="#" className="underline hover:text-gray-700">
+              <a {}" className="underline hover:text-gray-700">
                 August
               </a>
             </p>
