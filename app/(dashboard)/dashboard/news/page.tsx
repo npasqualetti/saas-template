@@ -24,8 +24,10 @@ async function getData() {
   // Recommendation: handle errors
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
+    console.log(res.ok)
     throw new Error("Failed to fetch data")
   }
+  console.log(res.json())
   return res.json()
 }
 
