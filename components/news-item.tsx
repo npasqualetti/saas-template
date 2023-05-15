@@ -54,7 +54,7 @@ export function NewsItem({ data }: NewsItemProps) {
 
         <div>
           <strong className="rounded border border-indigo-500 bg-indigo-500 px-3 py-1.5 text-[10px] font-medium text-white">
-            "test"
+            stest
           </strong>
 
           <h3 className="mt-4 text-lg font-medium sm:text-xl">
