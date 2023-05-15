@@ -14,8 +14,26 @@ export const metadata = {
   title: "Dashboard",
 }
 
+async function getData() {
+  const res = await fetch(
+    "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=demo"
+  )
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data")
+  }
+
+  return res.json()
+}
+
 export default async function DashboardPage() {
   const user = await getCurrentUser()
+  const data = await getData()
+  console.log(data)
 
   if (!user) {
     redirect(authOptions?.pages?.signIn || "/login")
@@ -37,12 +55,7 @@ export default async function DashboardPage() {
 
   return (
     <DashboardShell>
-      <DashboardHeader
-        heading="Watchlist"
-        text="Create and manage your watchlist."
-      >
-        <WatchlistCreateButton />
-      </DashboardHeader>
+      <DashboardHeader heading="News" text="Read the latest news." />
       <div>
         <div className="divide-y divide-border rounded-md border">
           <NewsItem />
