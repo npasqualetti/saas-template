@@ -4,7 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { WatchlistOperations } from "@/components/watchlist-operations"
 
 interface NewsItemProps {
-  any
+  data: any
 }
 
 export function NewsItem({ data }: NewsItemProps) {
