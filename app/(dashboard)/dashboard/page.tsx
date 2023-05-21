@@ -17,11 +17,12 @@ export default async function DashboardPage() {
   const user = await getCurrentUser()
 
   if (!user) {
+    console.log('No user.')
   }
 
   const watchlist = await db.watchlist.findMany({
     where: {
-      authorId: user.id,
+      authorId: user?.id,
     },
     select: {
       id: true,
