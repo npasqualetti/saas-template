@@ -20,13 +20,13 @@ export default async function MarketingLayout({
           <MainNav items={marketingConfig.mainNav} />
           <nav>
             <Link
-              href="/login"
+              href="/dashboard"
               className={cn(
                 buttonVariants({ variant: "secondary", size: "sm" }),
                 "px-4"
               )}
             >
-              Login
+              Dashboard
             </Link>
           </nav>
         </div>
