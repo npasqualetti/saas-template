@@ -17,7 +17,7 @@ export default async function DashboardLayout({
   const user = await getCurrentUser()
 
   if (!user) {
-    return notFound()
+    console.log("hi")
   }
 
   return (
