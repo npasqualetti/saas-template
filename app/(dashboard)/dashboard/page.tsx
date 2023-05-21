@@ -16,9 +16,8 @@ export const metadata = {
 export default async function DashboardPage() {
   const user = await getCurrentUser()
 
-  // if (!user) {
-  //   redirect(authOptions?.pages?.signIn || "/login")
-  // }
+  if (!user) {
+  }
 
   const watchlist = await db.watchlist.findMany({
     where: {
