@@ -26,23 +26,22 @@ export default function PricingPage() {
           </h3>
           <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
             <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Unlimited Posts
+              <Icons.check className="mr-2 h-4 w-4" /> Unlimited News Sentiment
             </li>
             <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Unlimited Users
-            </li>
-
-            <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Custom domain
+              <Icons.check className="mr-2 h-4 w-4" /> Unlimited Stock Sentiment Search
             </li>
             <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Dashboard Analytics
+              <Icons.check className="mr-2 h-4 w-4" /> Unlimited Watchlist
             </li>
             <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Access to Discord
+              <Icons.check className="mr-2 h-4 w-4" /> Dashboard Access
             </li>
             <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Premium Support
+              <Icons.check className="mr-2 h-4 w-4" /> Access to Discord (Pro)
+            </li>
+            <li className="flex items-center">
+              <Icons.check className="mr-2 h-4 w-4" /> 24/7 Premium Support
             </li>
           </ul>
         </div>
@@ -58,11 +57,34 @@ export default function PricingPage() {
           </Link>
         </div>
       </div>
-      <div className="mx-auto flex w-full max-w-[58rem] flex-col gap-4">
-        <p className="max-w-[85%] leading-normal text-muted-foreground sm:leading-7">
-          Taxonomy is a demo app.{" "}
-          <strong>You can test the upgrade and won&apos;t be charged.</strong>
-        </p>
+            <div className="grid w-full items-start gap-10 rounded-lg border p-10 md:grid-cols-[1fr_200px]">
+        <div className="grid gap-6">
+          <h3 className="text-xl font-bold sm:text-2xl">
+            What&apos;s included in the FREE plan
+          </h3>
+          <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
+            <li className="flex items-center">
+              <Icons.check className="mr-2 h-4 w-4" /> Dashboard Access
+            </li>
+            <li className="flex items-center">
+              <Icons.check className="mr-2 h-4 w-4" /> Access to Discord
+            </li>
+            <li className="flex items-center">
+              <Icons.check className="mr-2 h-4 w-4" /> 24/7 Support
+            </li>
+          </ul>
+        </div>
+        <div className="flex flex-col gap-4 text-center">
+          <div>
+            <h4 className="text-7xl font-bold">$0</h4>
+            <p className="text-sm font-medium text-muted-foreground">
+              Free
+            </p>
+          </div>
+          <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
+            Get Started
+          </Link>
+        </div>
       </div>
     </section>
   )

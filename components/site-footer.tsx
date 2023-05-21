@@ -14,12 +14,9 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
           <p className="text-center text-sm leading-loose md:text-left">
             Copyright &copy; {new Date().getFullYear()}{" "}
             <a
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
+              className="font-medium"
             >
-              Nick Pasqualetti
+              Technet Consulting LLC
             </a>{" "}
             <a
               href="/terms"

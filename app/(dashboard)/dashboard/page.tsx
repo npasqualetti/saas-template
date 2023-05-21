@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation"
+import { getUserSubscriptionPlan } from "@/lib/subscription"
 
 import { authOptions } from "@/lib/auth"
 import { db } from "@/lib/db"
@@ -17,7 +18,7 @@ export default async function DashboardPage() {
   const user = await getCurrentUser()
 
   if (!user) {
-    console.log('No User')
+    redirect(authOptions?.pages?.signIn || "/login")
   }
 
   const watchlist = await db.watchlist.findMany({
@@ -33,7 +34,8 @@ export default async function DashboardPage() {
       updatedAt: "desc",
     },
   })
-
+  const subscriptionPlan = await getUserSubscriptionPlan(user.id)
+  console.log(subscriptionPlan.isPro)
   return (
     <DashboardShell>
       <DashboardHeader
