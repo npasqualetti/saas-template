@@ -24,7 +24,7 @@ export default async function BlogPage() {
             Blog
           </h1>
           <p className="text-xl text-muted-foreground">
-            View SentiMetrics' latest blog posts.
+            View SentiMetrics&quot; latest blog posts.
           </p>
         </div>
       </div>
