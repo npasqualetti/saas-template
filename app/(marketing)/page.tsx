@@ -140,10 +140,3 @@ export default async function IndexPage() {
     </>
   )
 }
-
-
-export const Header = () => {
-  return (
-
-  );
-};
