@@ -14,25 +14,7 @@ export const metadata = {
 }
 
 export default async function DashboardPage() {
-  const user = await getCurrentUser()
 
-  if (!user) {
-    console.log('No user.')
-  }
-
-  const watchlist = await db.watchlist.findMany({
-    where: {
-      authorId: user?.id,
-    },
-    select: {
-      id: true,
-      symbol: true,
-      createdAt: true,
-    },
-    orderBy: {
-      updatedAt: "desc",
-    },
-  })
 
   return (
     <DashboardShell>
@@ -43,24 +25,7 @@ export default async function DashboardPage() {
         <WatchlistCreateButton />
       </DashboardHeader>
       <div>
-        {watchlist?.length ? (
-          <div className="divide-y divide-border rounded-md border">
-            {watchlist.map((watchlist) => (
-              <WatchlistItem key={watchlist.id} watchlist={watchlist} />
-            ))}{" "}
-          </div>
-        ) : (
-          <EmptyPlaceholder>
-            <EmptyPlaceholder.Icon name="post" />
-            <EmptyPlaceholder.Title>
-              No watchlist created
-            </EmptyPlaceholder.Title>
-            <EmptyPlaceholder.Description>
-              You don&apos;t have any items in your watchlist yet. Start by adding tickers.
-            </EmptyPlaceholder.Description>
-            <WatchlistCreateButton variant="outline" />
-          </EmptyPlaceholder>
-        )}
+
       </div>
     </DashboardShell>
   )
