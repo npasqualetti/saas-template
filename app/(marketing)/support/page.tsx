@@ -1,0 +1,96 @@
+"use client"
+
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { Textarea } from "@/components/ui/textarea"
+
+export const metadata = {
+  title: "Contact",
+}
+
+export default function ContactPage() {
+  return (
+    <section className="container flex flex-col  gap-6 py-8 md:max-w-[64rem] md:py-12 lg:py-24">
+      <div className="mx-auto flex w-full flex-col gap-4 md:max-w-[58rem]">
+        <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+          Simple, transparent pricing
+        </h2>
+        <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+          Unlock all features including unlimited stock sentiment searches with the PRO plan.
+        </p>
+      </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>Report an issue</CardTitle>
+        <CardDescription>
+          What area are you having problems with?
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="grid gap-6">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="grid gap-2">
+            <Label htmlFor="area">Area</Label>
+            <Select defaultValue="billing">
+              <SelectTrigger id="area">
+                <SelectValue placeholder="Select" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="team">Team</SelectItem>
+                <SelectItem value="billing">Billing</SelectItem>
+                <SelectItem value="account">Account</SelectItem>
+                <SelectItem value="deployments">Deployments</SelectItem>
+                <SelectItem value="support">Support</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="security-level">Security Level</Label>
+            <Select defaultValue="2">
+              <SelectTrigger id="security-level">
+                <SelectValue placeholder="Select level" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="1">Severity 1 (Highest)</SelectItem>
+                <SelectItem value="2">Severity 2</SelectItem>
+                <SelectItem value="3">Severity 3</SelectItem>
+                <SelectItem value="4">Severity 4 (Lowest)</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+        <div className="grid gap-2">
+          <Label htmlFor="subject">Subject</Label>
+          <Input id="subject" placeholder="I need help with..." />
+        </div>
+        <div className="grid gap-2">
+          <Label htmlFor="description">Description</Label>
+          <Textarea
+            id="description"
+            placeholder="Please include all information relevant to your issue."
+          />
+        </div>
+      </CardContent>
+      <CardFooter className="justify-between space-x-2">
+        <Button variant="ghost">Cancel</Button>
+        <Button>Submit</Button>
+      </CardFooter>
+    </Card>
+    </section>
+  )
+}

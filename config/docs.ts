@@ -46,5 +46,14 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Glossary",
+      items: [
+        {
+          title: "Glossary",
+          href: "/docs/glossary/",
+        },
+      ],
+    },
   ],
 }
