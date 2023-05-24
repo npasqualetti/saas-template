@@ -74,7 +74,8 @@ export function ProfileForm() {
     control: form.control,
   })
 
-  function onSubmit(data: ProfileFormValues) {
+  async function onSubmit(data: ProfileFormValues) {
+    "use server"
     toast({
       title: "You submitted the following values:",
       description: (
