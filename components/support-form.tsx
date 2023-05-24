@@ -4,7 +4,7 @@ import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useFieldArray, useForm } from "react-hook-form"
 import * as z from "zod"
-import { test123 } from "@/components/test"
+import { supportEmail } from "@/components/support-email"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
