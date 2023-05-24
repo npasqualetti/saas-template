@@ -16,7 +16,7 @@ export default async function IndexPage() {
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
             Maximize your investment potential, make informed decisions, and
-            seize opportunities like never before. Join the SemtiMetric today.
+            seize opportunities like never before. Join SemtiMetric today.
           </p>
           <div className="space-x-4">
             <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
