@@ -4,6 +4,7 @@ import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useFieldArray, useForm } from "react-hook-form"
 import * as z from "zod"
+import { test123 } from "@/components/test"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -75,7 +76,6 @@ export function ProfileForm() {
   })
 
   async function onSubmit(data: ProfileFormValues) {
-    "use server"
     toast({
       title: "You submitted the following values:",
       description: (
@@ -84,6 +84,7 @@ export function ProfileForm() {
         </pre>
       ),
     })
+    test123()
   }
 
   return (
