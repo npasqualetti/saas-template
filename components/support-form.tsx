@@ -79,13 +79,11 @@ export function ProfileForm() {
     toast({
       title: "We received your ticket.",
       description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">
-            Thank you for submitting the contact form.\n \\n We have received
-            your message and appreciate you reaching out to us. We will be in
-            contact within the next 24 hours.
-          </code>
-        </pre>
+        <p className="mt-2 w-[340px] rounded-md bg-slate-950 p-4 text-white">
+          Thank you for submitting the contact form.\n \\n We have received your
+          message and appciate you reaching out to us. We will be in contact
+          within the next 24 hours.
+        </p>
       ),
     })
     supportEmail(data)
