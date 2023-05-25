@@ -191,7 +191,12 @@ export function ProfileForm() {
             Add URL
           </Button>
         </div>
-        <Button type="submit">Update profile</Button>
+        <Button
+          className="ml-auto flex items-center justify-between space-x-2 pt-0"
+          type="submit"
+        >
+          Update profile
+        </Button>
       </form>
     </Form>
   )
