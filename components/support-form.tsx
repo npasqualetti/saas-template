@@ -76,6 +76,18 @@ export function ProfileForm() {
   })
 
   async function onSubmit(data: ProfileFormValues) {
+    toast({
+      title: "We received your ticket.",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">
+            Thank you for submitting the contact form. We have received your
+            message and appreciate you reaching out to us. We will be in contact
+            within the next 24 hours.
+          </code>
+        </pre>
+      ),
+    })
     supportEmail(data)
   }
 
@@ -192,10 +204,10 @@ export function ProfileForm() {
           </Button>
         </div>
         <Button
-          className="ml-auto flex items-center justify-between space-x-2 bg-primary pt-0 text-primary-foreground hover:bg-primary/90"
+          className="ml-auto flex items-center justify-between space-x-2 bg-primary text-primary-foreground hover:bg-primary/90"
           type="submit"
         >
-          Update profile
+          Submit
         </Button>
       </form>
     </Form>
