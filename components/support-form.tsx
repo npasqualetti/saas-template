@@ -80,7 +80,7 @@ export function ProfileForm() {
       title: "We received your ticket.",
       description: (
         <p className="mt-2 w-[340px] rounded-md bg-slate-950 p-4 text-white">
-          Thank you for submitting the contact form.\n \\n We have received your
+          Thank you for submitting the contact form. We have received your
           message and appciate you reaching out to us. We will be in contact
           within the next 24 hours.
         </p>
