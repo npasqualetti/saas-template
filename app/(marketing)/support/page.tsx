@@ -43,10 +43,6 @@ export default function ContactPage() {
         <CardContent className="grid gap-6">
           <ProfileForm />
         </CardContent>
-        <CardFooter className="justify-between space-x-2">
-          <Button variant="ghost">Cancel</Button>
-          <Button>Submit</Button>
-        </CardFooter>
       </Card>
     </section>
   )

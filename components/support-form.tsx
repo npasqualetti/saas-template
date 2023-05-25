@@ -192,7 +192,7 @@ export function ProfileForm() {
           </Button>
         </div>
         <Button
-          className="ml-auto flex items-center justify-between space-x-2 pt-0"
+          className="ml-auto flex items-center justify-between space-x-2 bg-primary pt-0 text-primary-foreground hover:bg-primary/90"
           type="submit"
         >
           Update profile
