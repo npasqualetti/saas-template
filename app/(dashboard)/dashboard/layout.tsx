@@ -6,6 +6,7 @@ import { MainNav } from "@/components/main-nav"
 import { DashboardNav } from "@/components/nav"
 import { SiteFooter } from "@/components/site-footer"
 import { UserAccountNav } from "@/components/user-account-nav"
+import { DocsSearch } from "@/components/search"
 
 interface DashboardLayoutProps {
   children?: React.ReactNode
@@ -25,6 +26,7 @@ export default async function DashboardLayout({
       <header className="sticky top-0 z-40 border-b bg-background">
         <div className="container flex h-16 items-center justify-between py-4">
           <MainNav items={dashboardConfig.mainNav} />
+          <DocsSearch />
           <UserAccountNav
             user={{
               name: user?.name,
